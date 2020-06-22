@@ -14,10 +14,10 @@ class Question
     @user_guess = gets.chomp.to_i
 
     if @user_guess == @num1 + @num2
-      puts "Great job!"
+      puts "√√√ Correct! √√√"
       true
     else
-      puts "Wrong!"
+      puts "XXX Wrong! XXX"
       false
     end
   end
