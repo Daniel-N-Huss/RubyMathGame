@@ -4,27 +4,31 @@ class Game
 
   def initialize
     @player1 = Player.new
-    @current_question = nil
+    @player2 = Player.new
+    #@current_question = nil
     @current_turn = nil
     @turn_count = 0
   end
 
   def play_the_game
     while @player1.lives > 0
-      current_question = Question.new
-
+      
       self.turn_count += 1
       
+      current_question = Question.new
+
       current_turn = Turn.new(turn_count, @player1, @player1)
       
-      current_turn.start_turn
+      current_turn.setup_turn
 
-      current_question.ask_question
-      result = current_question.answer_question
+      current_turn.play_turn
 
-      if !result
-        @player1.lives -= 1
-      end
+      #current_question.ask_question
+      #result = current_question.answer_question
+
+      #if !result
+      #  @player1.lives -= 1
+      #end
     end
 
     self.game_over
