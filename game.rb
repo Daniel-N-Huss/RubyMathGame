@@ -11,24 +11,18 @@ class Game
   end
 
   def play_the_game
-    while @player1.lives > 0
+    while @player1.lives > 0 && @player2.lives > 0
       
       self.turn_count += 1
       
       current_question = Question.new
 
-      current_turn = Turn.new(turn_count, @player1, @player1)
+      current_turn = Turn.new(turn_count, @player1, @player2)
       
       current_turn.setup_turn
 
       current_turn.play_turn
 
-      #current_question.ask_question
-      #result = current_question.answer_question
-
-      #if !result
-      #  @player1.lives -= 1
-      #end
     end
 
     self.game_over

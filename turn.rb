@@ -26,7 +26,7 @@ class Turn
     result = current_question.answer_question
 
     if !result
-      @player1.lives -= 1
+      self.current_player.lives -= 1
     end
   end
 
