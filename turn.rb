@@ -18,7 +18,7 @@ class Turn
     else
       self.current_player = @player1
     end
-    puts "Question ##{@turnNum}. This one is for #{current_player}!"
+    puts "Question ##{@turnNum}. This one is for #{current_player.name}!"
   end
 
   def play_turn
