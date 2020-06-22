@@ -10,10 +10,15 @@ class Game
       current_question = Question.new
 
       current_question.ask_question
-      current_question.answer_question
+      result = current_question.answer_question
 
-      @player1.lives -= 1
+      if !result
+        @player1.lives -= 1
+      end
     end
+
+    self.game_over
+
   end
   # ================ Messages ================= #
 
@@ -31,4 +36,7 @@ class Game
     Ready player 1?"
   end
 
+  def game_over
+    puts "Oops, you ran out of lives! Game over!"
+  end
 end

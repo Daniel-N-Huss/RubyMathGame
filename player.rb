@@ -3,6 +3,6 @@ class Player
   attr_accessor :lives
   
   def initialize
-    @lives = 1
+    @lives = 3
   end
 end

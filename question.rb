@@ -14,8 +14,10 @@ class Question
 
     if @user_guess == @answer
       puts "Great job!"
+      true
     else
       puts "Wrong!"
+      false
     end
   end
 
